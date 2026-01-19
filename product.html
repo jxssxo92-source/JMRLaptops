@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - JMR Laptops</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+
+<script src="js/cart.js" defer></script>
+
+
+    <!-- Core scripts -->
+    <script src="js/theme.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/product-page.js" defer></script>
+</head>
+
+<body class="light">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+        </a>
+
+        <nav id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="order-history.html">Order History</a>
+            <a href="info.html">Information</a>
+            <script src="js/cart.js" defer></script>
+
+            <a id="cartBtn" class="cart-button">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count-badge" id="cartCount">0</span>
+            </a>
+
+            <button id="themeToggle" class="theme-toggle-btn">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+
+            <div id="profileBtn" class="profile-button">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div id="profileDropdown" class="profile-dropdown hidden"></div>
+        </nav>
+    </header>
+
+    <!-- PRODUCT DETAILS -->
+    <div class="product-details-container">
+        <img id="productImage" src="" alt="Laptop">
+
+        <h1 id="productName"></h1>
+        <p id="productSpecs"></p>
+        <h2 id="productPrice"></h2>
+
+        <a href="products.html" class="back-btn">Back to Products</a>
+
+        <!-- These buttons will be disabled by JS if out of stock -->
+        <button id="addToCartBtn" class="buy-btn">Add to Cart</button>
+        <button id="buyNowBtn" class="buy-btn">Buy Now</button>
+    </div>
+
+    <!-- REVIEW SECTION -->
+    <div class="review-wrapper">
+        <div class="review-box">
+            <h3>Leave a Review</h3>
+
+            <div class="rating-row">
+                <label>Rating</label>
+                <select id="reviewRating">
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+            </div>
+
+            <textarea id="reviewComment" placeholder="Share your experience with this laptop..."></textarea>
+
+            <button id="submitReview" class="review-submit-btn">Submit Review</button>
+        </div>
+
+        <div class="reviews-list-container">
+            <h3>Customer Reviews</h3>
+            <div id="reviewsList"></div>
+        </div>
+    </div>
+
+    <!-- BUY NOW MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <span class="modal-close" id="modalClose">✖</span>
+
+            <h2>Proceed to Checkout?</h2>
+            <p>You can complete your purchase on the checkout page.</p>
+
+            <div class="modal-buttons">
+                <button class="btn-primary" onclick="window.location='checkout.html'">Go to Checkout</button>
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART PANEL OVERLAY -->
+    <div class="cart-panel-overlay" id="cartOverlay"></div>
+
+    <!-- CART PANEL -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-panel-header">
+            <h2>Your Cart</h2>
+            <span class="cart-panel-close" id="closeCart">✖</span>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-panel-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cartTotal">£0</span>
+            </div>
+
+            <button class="cart-checkout-btn" onclick="window.location='checkout.html'">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

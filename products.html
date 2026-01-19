@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - JMR Laptops</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/cart.js" defer></script>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/products-loader.js" defer></script>
+</head>
+
+<body class="light">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+    </a>
+
+    <nav id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="order-history.html">Order History</a>
+      <a href="info.html">Information</a>
+<script src="js/cart.js" defer></script>
+
+      <a id="cartBtn" class="cart-button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count-badge" id="cartCount">0</span>
+      </a>
+
+      <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+
+      <div id="profileBtn" class="profile-button">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <div id="profileDropdown" class="profile-dropdown"></div>
+    </nav>
+  </header>
+
+  <!-- HEADER -->
+  <section class="products-header">
+    <h1>Our Laptops</h1>
+    <p>Premium performance. Modern design. Built for everyone.</p>
+  </section>
+
+  <!-- FILTERS + PRODUCTS -->
+  <section class="products">
+    <div class="products-layout">
+
+      <!-- FILTER SIDEBAR -->
+      <aside class="product-filters">
+        <h2 class="filters-title">Filters</h2>
+
+        <!-- Hide out of stock -->
+        <div class="filter-section">
+          <label class="toggle-row">
+            <input type="checkbox" id="hideOutOfStock">
+            <span class="toggle-switch"></span>
+            <span>Hide out of stock</span>
+          </label>
+        </div>
+
+        <div class="filter-divider"></div>
+
+        <!-- Price -->
+        <div class="filter-section">
+          <h3 class="filter-subtitle">Price</h3>
+          <div class="price-row">
+            <input type="number" id="priceMin" placeholder="Min">
+            <span class="price-separator">to</span>
+            <input type="number" id="priceMax" placeholder="Max">
+          </div>
+          <button id="applyPriceFilter" class="filter-apply-btn">Apply</button>
+        </div>
+
+        <div class="filter-divider"></div>
+
+      </aside>
+
+      <!-- PRODUCT LIST -->
+      <div id="productList" class="product-list"></div>
+
+    </div>
+  </section>
+
+  <!-- CART OVERLAY -->
+  <div class="cart-panel-overlay" id="cartOverlay"></div>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-panel-header">
+      <h2>Your Cart</h2>
+      <span class="cart-panel-close" id="closeCart">✖</span>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-panel-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cartTotal">£0</span>
+      </div>
+
+      <button class="cart-checkout-btn" onclick="window.location='checkout.html'">
+        Checkout
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+<aside class="product-filters">
+  <h2 class="filters-title">Filters</h2>
+
+  <!-- Hide out of stock -->
+  <div class="filter-section">
+    <label class="toggle-row">
+      <input type="checkbox" id="hideOutOfStock">
+      <span class="toggle-switch"></span>
+      <span>Hide out of stock</span>
+    </label>
+  </div>
+
+  <div class="filter-divider"></div>
+
+  <!-- Price -->
+  <div class="filter-section">
+    <h3 class="filter-subtitle">Price</h3>
+    <div class="price-row">
+      <input type="number" id="priceMin" placeholder="Min">
+      <span class="price-separator">to</span>
+      <input type="number" id="priceMax" placeholder="Max">
+    </div>
+    <button id="applyPriceFilter" class="filter-apply-btn">Apply</button>
+  </div>
+</aside>

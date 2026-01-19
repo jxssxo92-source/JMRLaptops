@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - JMR Laptops</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/script.js" defer></script>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            const signupBtn = document.getElementById("signupBtn");
+
+            signupBtn.addEventListener("click", async (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (!email || !password) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                try {
+                    await auth.createUserWithEmailAndPassword(email, password);
+
+                    const redirect = new URLSearchParams(window.location.search).get("redirect");
+                    window.location = redirect ? redirect : "index.html";
+
+                } catch (err) {
+                    alert("Signup failed. Try again.");
+                    console.error(err);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="light">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+        </a>
+    </header>
+
+    <section class="auth-container">
+        <h1>Create Account</h1>
+
+        <input type="email" id="email" placeholder="Email" autocomplete="email" required>
+        <input type="password" id="password" placeholder="Password" autocomplete="new-password" required>
+
+        <button id="signupBtn" class="auth-btn">Sign Up</button>
+
+        <p style="margin-top:1rem; font-size:0.9rem;">
+            Already have an account?
+            <a href="login.html" class="auth-btn-nav">Sign in</a>
+        </p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "jmr-laptops",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

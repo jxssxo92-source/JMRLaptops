@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty & Returns - JMR Laptops</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="light">
+
+<header class="navbar">
+    <a href="index.html" class="logo"><i class="fa-solid fa-laptop-code"></i> JMR Laptops</a>
+
+    <nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="info.html">Information</a>
+        <a href="order-history.html">Order History</a>
+        <script src="js/cart.js" defer></script>
+
+        <a id="cartBtn" class="cart-button">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count-badge" id="cartCount">0</span>
+        </a>
+
+        <button id="themeToggle" class="theme-toggle-btn">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+
+        <div id="profileBtn" class="profile-button">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div id="profileDropdown" class="profile-dropdown hidden"></div>
+    </nav>
+</header>
+
+<section class="page-container">
+    <a href="info.html" class="back-btn">
+    <i class="fa-solid fa-chevron-left"></i> Back to Information Center
+</a>
+
+    <h1>Warranty & Returns</h1>
+
+    <h2>Warranty</h2>
+    <p>All laptops come with a 12‑month hardware warranty covering defects and failures.</p>
+
+    <h2>Returns</h2>
+    <p>You may return your laptop within 30 days of delivery if it’s in original condition.</p>
+
+    <h2>How to Request a Return</h2>
+    <p>Contact our support team with your order number.  
+    We’ll provide a return label and instructions.</p>
+</section>
+
+</body>
+</html>

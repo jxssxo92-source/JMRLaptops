@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="admin-header">
+    <div class="admin-left">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <div class="admin-right">
+        <a href="index.html" class="admin-home-btn">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <button id="addProductBtn" class="add-btn">+ Add Product</button>
+    </div>
+</header>
+
+    <div id="adminWarning" class="warning">Checking admin access...</div>
+
+    <div id="adminPanel" class="admin-panel" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                <tr><td colspan="5">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <h2 id="modalTitle">Add Product</h2>
+
+            <input id="prodName" placeholder="Product Name">
+            <input id="prodSpecs" placeholder="Specs">
+            <input id="prodPrice" placeholder="Price">
+            <input id="prodImage" placeholder="Image URL">
+            <input id="prodStock" placeholder="Stock">
+
+            <button id="saveProductBtn" class="save-btn">Save</button>
+            <button id="closeModalBtn" class="close-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

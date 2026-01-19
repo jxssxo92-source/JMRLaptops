@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Center - JMR Laptops</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="light">
+
+<!-- FULL NAVBAR -->
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+    </a>
+
+    <nav id="navLinks" style="position: relative;">
+    <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="order-history.html">Order History</a>
+            <a href="info.html">Information</a>
+            <script src="js/cart.js" defer></script>
+
+    <a id="cartBtn" class="cart-button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count-badge" id="cartCount">0</span>
+    </a>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+    <div id="profileBtn" class="profile-button">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div id="profileDropdown" class="profile-dropdown"></div>
+</nav>
+</header>
+
+<section class="info-center">
+    <h1>Information Center</h1>
+    <p class="info-sub">Everything you need to know, all in one place.</p>
+
+    <div class="info-grid">
+
+        <a href="about.html" class="info-tile">
+            <i class="fa-solid fa-circle-info"></i>
+            <h2>About Us</h2>
+            <p>Who we are and what we stand for.</p>
+        </a>
+
+        <a href="help.html" class="info-tile">
+            <i class="fa-solid fa-life-ring"></i>
+            <h2>Help Center</h2>
+            <p>Guides, support, and common questions.</p>
+        </a>
+
+        <a href="shipping-info.html" class="info-tile">
+            <i class="fa-solid fa-truck"></i>
+            <h2>Shipping Info</h2>
+            <p>Delivery times, tracking, and more.</p>
+        </a>
+
+        <a href="warranty.html" class="info-tile">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h2>Warranty & Returns</h2>
+            <p>Coverage details and return process.</p>
+        </a>
+
+        <a href="contact.html" class="info-tile">
+            <i class="fa-solid fa-envelope"></i>
+            <h2>Contact Us</h2>
+            <p>Reach our support team anytime.</p>
+        </a>
+
+    </div>
+</section>
+
+</body>
+</html>

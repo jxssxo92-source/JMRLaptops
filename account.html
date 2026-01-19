@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+
+    <style>
+        .account-container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        }
+
+        .account-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .account-row {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .account-actions button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .danger {
+            background: #ff4d4d;
+            color: white;
+        }
+
+        .primary {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .admin-badge {
+            background: gold;
+            color: black;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+        </a>
+
+        <nav id="navLinks" style="position: relative;">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="order-history.html">Order History</a>
+            <a href="info.html">Information</a>
+
+            <div id="profileBtn" class="profile-button">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div id="profileDropdown" class="profile-dropdown"></div>
+        </nav>
+    </header>
+
+    <div class="account-container">
+        <h1 class="account-title">My Account</h1>
+
+        <div id="accountInfo">
+            Loading account details...
+        </div>
+
+        <div class="account-actions">
+            <button class="primary" id="changePasswordBtn">Change Password</button>
+            <button class="danger" id="deleteAccountBtn">Delete Account</button>
+            <button class="primary" id="logoutBtn2">Sign Out</button>
+        </div>
+    </div>
+
+    <script src="js/account.js"></script>
+
+</body>
+</html>

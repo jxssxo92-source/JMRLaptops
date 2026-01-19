@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | JMR Laptops</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="js/firebase-init.js" defer></script>
+    <script src="js/theme.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body class="light">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+        </a>
+
+        <nav id="navLinks" style="position: relative;">
+    <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="order-history.html">Order History</a>
+            <a href="info.html">Information</a>
+
+    <a id="cartBtn" class="cart-button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count-badge" id="cartCount">0</span>
+    </a>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+    <div id="profileBtn" class="profile-button">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div id="profileDropdown" class="profile-dropdown"></div>
+</nav>
+
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact">
+        <h1><i class="fa-solid fa-envelope"></i> Contact Us</h1>
+
+        <form id="contactForm" action="https://formspree.io/f/xdaaozpz" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 JMR Laptops</p>
+    </footer>
+
+    <!-- FORM SUCCESS HANDLER -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                alert("Message sent successfully!");
+                form.reset();
+            } else {
+                alert("Failed to send message. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>
+

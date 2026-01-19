@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Dell XPS 13",
+    "price": 300,
+    "image": "images/dell.jpg",
+    "inStock": false
+  },
+  {
+    "id": 2,
+    "name": "MacBook Pro 14\"",
+    "price": 1800,
+    "image": "images/mac.jpg",
+    "inStock": false
+  },
+  {
+    "id": 3,
+    "name": "HP Spectre x360",
+    "price": 850,
+    "image": "images/hp.jpg",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "price": 950,
+    "image": "images/thinkpad.jpg",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "ASUS ROG Zephyrus G14",
+    "price": 1200,
+    "image": "images/rog.jpg",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Acer Swift 3",
+    "price": 450,
+    "image": "images/swift.jpg",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Microsoft Surface Laptop 5",
+    "price": 1100,
+    "image": "images/surface.jpg",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Razer Blade 15",
+    "price": 1600,
+    "image": "images/razer.jpg",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "name": "Samsung Galaxy Book Pro",
+    "price": 700,
+    "image": "images/samsung.jpg",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "name": "LG Gram 17",
+    "price": 900,
+    "image": "images/lg.jpg",
+    "inStock": true
+  }
+]

@@ -1,0 +1,27 @@
+<section class="addresses">
+    <h2>Saved Addresses</h2>
+
+    <div id="addressesList" class="address-list"></div>
+
+    <button id="addAddressBtn" class="primary-btn">+ Add Address</button>
+
+    <div id="addressModal" class="modal-overlay">
+        <div class="modal">
+            <h3>Add / Edit Address</h3>
+            <input id="addrLabel" placeholder="Label (Home, Work)">
+            <input id="addrName" placeholder="Full name">
+            <input id="addrLine1" placeholder="Address line 1">
+            <input id="addrLine2" placeholder="Address line 2 (optional)">
+            <input id="addrCity" placeholder="City">
+            <input id="addrPostcode" placeholder="Postcode">
+            <input id="addrCountry" placeholder="Country">
+            <label class="checkbox-row">
+                <input type="checkbox" id="addrDefault"> Set as default
+            </label>
+            <div class="modal-actions">
+                <button id="saveAddressBtn" class="primary-btn">Save</button>
+                <button id="cancelAddressBtn" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</section>

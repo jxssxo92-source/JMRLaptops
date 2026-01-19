@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order History — JMR Laptops</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/cart.js" defer></script>
+
+
+  <!-- Page Logic -->
+  <script src="js/order-history.js" defer></script>
+
+  <!-- Theme + Global Script -->
+  <script src="js/theme.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body class="light">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fa-solid fa-laptop-code"></i> JMR Laptops
+    </a>
+
+    <nav id="navLinks" style="position: relative;">
+      <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="order-history.html">Order History</a>
+            <a href="info.html">Information</a>
+            <script src="js/cart.js" defer></script>
+            
+      <!-- Cart Button -->
+      <a id="cartBtn" class="cart-button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count-badge" id="cartCount">0</span>
+      </a>
+
+      <!-- Theme Toggle -->
+      <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+
+      <!-- Profile Button -->
+      <div id="profileBtn" class="profile-button">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div id="profileDropdown" class="profile-dropdown hidden"></div>
+    </nav>
+  </header>
+
+  <!-- ORDER HISTORY -->
+  <main class="order-history">
+    <h1>Your Orders</h1>
+
+    <!-- Dynamic order timeline -->
+    <div id="orderTimeline" class="order-timeline"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 JMR Laptops. All rights reserved.
+  </footer>
+
+  <!-- CART PANEL -->
+  <div id="cartOverlay" class="cart-panel-overlay"></div>
+
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-panel-header">
+      <h2>Your Cart</h2>
+      <span id="closeCart" class="cart-panel-close">✖</span>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-panel-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cartTotal">£0</span>
+      </div>
+      <a href="checkout.html" class="cart-checkout-btn">Checkout</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
