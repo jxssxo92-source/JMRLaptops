@@ -24,6 +24,12 @@
 </head>
 
 <body class="light">
+<div id="introScreen">
+  <h1 class="introLogo">JMR Laptops</h1>
+  <button id="enterBtn">ENTER</button>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- NAVBAR -->
     <header class="navbar">
@@ -117,3 +123,32 @@
 
 </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const intro = document.getElementById("introScreen");
+    const enterBtn = document.getElementById("enterBtn");
+
+    if (!intro || !enterBtn) return;
+
+    // If intro already played this session → skip it
+    if (sessionStorage.getItem("introPlayed") === "true") {
+      intro.style.display = "none";
+      return;
+    }
+
+    // Show ENTER button after logo animation
+    setTimeout(() => {
+      enterBtn.style.opacity = "1";
+      enterBtn.style.transform = "translateY(0)";
+      enterBtn.style.pointerEvents = "auto";
+    }, 1400);
+
+    // When ENTER is clicked → fade out + mark intro as played
+    enterBtn.addEventListener("click", () => {
+      intro.classList.add("fadeOut");
+      sessionStorage.setItem("introPlayed", "true");
+    });
+  });
+</script>
+

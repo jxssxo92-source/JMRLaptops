@@ -38,10 +38,14 @@ auth.onAuthStateChanged(user => {
 async function loadProducts() {
   try {
     const snap = await db.collection("products").get();
-    const products = snap.docs.map(d => d.data());
+
+    const products = snap.docs.map(d => ({
+      id: d.id,        // FIXED: store Firestore doc ID
+      ...d.data()
+    }));
 
     if (!products.length) {
-      productTableBody.innerHTML = `<tr><td colspan="5">No products found.</td></tr>`;
+      productTableBody.innerHTML = `<tr><td colspan="6">No products found.</td></tr>`;
       return;
     }
 
@@ -55,6 +59,7 @@ async function loadProducts() {
           <button class="stock-btn" data-id="${p.id}" data-delta="-1">-1</button>
           <button class="stock-btn" data-id="${p.id}" data-delta="1">+1</button>
           <button class="edit-btn" data-id="${p.id}">Edit</button>
+          <button class="delete-btn" data-id="${p.id}">Delete</button>
         </td>
       </tr>
     `).join("");
@@ -71,9 +76,26 @@ async function loadProducts() {
       btn.addEventListener("click", () => openEditModal(btn.getAttribute("data-id")));
     });
 
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", () => deleteProduct(btn.getAttribute("data-id")));
+    });
+
   } catch (err) {
     console.error("Error loading products:", err);
-    productTableBody.innerHTML = `<tr><td colspan="5">Error loading products.</td></tr>`;
+    productTableBody.innerHTML = `<tr><td colspan="6">Error loading products.</td></tr>`;
+  }
+}
+
+async function deleteProduct(id) {
+  const confirmDelete = confirm("Are you sure you want to delete this product?");
+  if (!confirmDelete) return;
+
+  try {
+    await db.collection("products").doc(id).delete();
+    loadProducts();
+  } catch (err) {
+    console.error("Delete failed:", err);
+    alert("Failed to delete product.");
   }
 }
 
@@ -147,8 +169,8 @@ async function saveProduct() {
       inStock: stock > 0
     });
   } else {
-    const id = Date.now();
-    const ref = db.collection("products").doc(String(id));
+    const id = Date.now().toString();
+    const ref = db.collection("products").doc(id);
     await ref.set({
       id,
       name,
@@ -164,12 +186,6 @@ async function saveProduct() {
   loadProducts();
 }
 
-if (addProductBtn) {
-  addProductBtn.addEventListener("click", openAddModal);
-}
-if (closeModalBtn) {
-  closeModalBtn.addEventListener("click", () => modalOverlay.style.display = "none");
-}
-if (saveProductBtn) {
-  saveProductBtn.addEventListener("click", saveProduct);
-}
+if (addProductBtn) addProductBtn.addEventListener("click", openAddModal);
+if (closeModalBtn) closeModalBtn.addEventListener("click", () => modalOverlay.style.display = "none");
+if (saveProductBtn) saveProductBtn.addEventListener("click", saveProduct);

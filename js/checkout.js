@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const shipCountry = document.getElementById("shipCountry");
 
   const newAddressForm = document.getElementById("newAddressForm");
-  const useNewAddressBtn = document.getElementById("useNewAddressBtn");
   const continueBtn = document.getElementById("continueBtn");
   const backBtn = document.getElementById("backBtn");
   const placeOrderBtn = document.getElementById("placeOrderBtn");
@@ -159,13 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const snap = await ref.orderBy("isDefault", "desc").get();
 
-      if (snap.empty) {
-        savedAddresses.innerHTML =
-          "<p>No saved addresses. Enter a new one below.</p>";
-        newAddressForm?.classList.remove("hidden");
-        return;
-      }
-
       const addresses = [];
       snap.forEach(doc => addresses.push({ id: doc.id, ...doc.data() }));
 
@@ -276,12 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     loadSavedAddresses(user);
-  });
-
-  useNewAddressBtn?.addEventListener("click", () => {
-    newAddressForm?.classList.toggle("hidden");
-    selectedAddress = null;
-    renderOrderSummary();
   });
 
   continueBtn?.addEventListener("click", () => {
