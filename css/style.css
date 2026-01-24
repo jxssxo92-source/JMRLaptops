@@ -1,3 +1,13 @@
+/* ===========================
+   POPPINS FONT IMPORT
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+
 @font-face {
   font-family: 'Aladdin';
   src: url('/fonts/Aladdin.ttf') format('truetype');
@@ -5835,3 +5845,4 @@ body.dark .product-filters .filter-apply-btn:hover {
 .cartItem .remove {
   font-size: 0.8rem;
 }
+

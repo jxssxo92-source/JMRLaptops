@@ -1,87 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Center - JMR Laptops</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center – JMR Laptops</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet" />
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <script src="js/firebase-config.js"></script>
-    <script src="js/auth.js" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/script.js" defer></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 
 <body class="light">
 
 <header class="navbar">
-    <a href="index.html" class="logo"><i class="fa-solid fa-laptop-code"></i> JMR Laptops</a>
+  <a href="index.html" class="logo"><i class="fa-solid fa-laptop-code"></i> JMR Laptops</a>
 
-    <header class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="logo">JMR Laptops</a>
-  </div>
-
-  <nav class="nav-links">
+  <nav id="navLinks">
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
     <a href="contact.html">Contact</a>
-    <a href="orders.html">Order History</a>
     <a href="info.html">Information</a>
-  </nav>
+    <a href="order-history.html">Order History</a>
 
-  <div class="nav-right">
-    <button class="theme-toggle-btn" id="themeToggle">
-      <i class="fa-solid fa-moon"></i>
+    <a id="cartBtn" class="cart-button">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count-badge" id="cartCount">0</span>
+    </a>
+
+    <button id="themeToggle" class="theme-toggle-btn">
+      <i class="fa-solid fa-circle-half-stroke"></i>
     </button>
 
-    <div class="cart-button">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span class="cart-count-badge">0</span>
+    <div id="profileBtn" class="profile-button">
+      <i class="fa-solid fa-user"></i>
     </div>
 
-    <div class="profile-wrapper">
-      <button class="profile-button">
-        <i class="fa-solid fa-user"></i>
-      </button>
-
-      <div class="profile-dropdown">
-        <span class="dropdown-email">Signed in as<br>user@example.com</span>
-        <a href="profile.html">Profile</a>
-        <a href="orders.html">Orders</a>
-        <button id="logoutBtn">Log out</button>
-      </div>
-    </div>
-  </div>
-</header>
-
+    <div id="profileDropdown" class="profile-dropdown hidden"></div>
+  </nav>
 </header>
 
 <section class="page-container">
-    <a href="info.html" class="back-btn">
+  <a href="info.html" class="back-btn">
     <i class="fa-solid fa-chevron-left"></i> Back to Information Center
-</a>
+  </a>
 
-    <h1>Help Center</h1>
+  <h1>Help Center</h1>
 
-    <h2>How to Place an Order</h2>
-    <p>Browse our products, add items to your cart, and proceed to checkout.  
-    You’ll be guided through shipping and payment steps.</p>
+  <h2>How to Place an Order</h2>
+  <p>Browse our products, add items to your cart, and proceed to checkout. You’ll be guided through shipping and payment steps.</p>
 
-    <h2>Managing Your Account</h2>
-    <p>Sign in to view your saved addresses, order history, and account details.</p>
+  <h2>Managing Your Account</h2>
+  <p>Sign in to view your saved addresses, order history, and account details.</p>
 
-    <h2>Tracking Your Order</h2>
-    <p>Once your order ships, you’ll receive a tracking link via email.</p>
+  <h2>Tracking Your Order</h2>
+  <p>Once your order ships, you’ll receive a tracking link via email.</p>
 
-    <h2>Need More Help?</h2>
-    <p>Visit our <a href="contact.html">Contact Page</a> to reach our support team.</p>
+  <h2>Need More Help?</h2>
+  <p>Visit our <a href="contact.html">Contact Page</a> to reach our support team.</p>
 </section>
 
 </body>
